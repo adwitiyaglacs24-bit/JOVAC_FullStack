@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+</head>
+<body>
+
+    <form id="userForm">
+        <input type="text" id="userInput" placeholder="Enter Username">
+        <p id="message"></p>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const userForm = document.getElementById("userForm");
+        const userInput = document.getElementById("userInput");
+        const message = document.getElementById("message");
+
+        userForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let text = userInput.value.trim();
+
+            if (text === "") {
+                message.innerText = "Username cannot be empty!";
+                message.style.color = "red";
+            }
+            else if (text.length < 6) {
+                message.innerText = "Username must contain at least 6 characters.";
+                message.style.color = "red";
+            }
+            else {
+                message.innerText = "Form submitted successfully!";
+                message.style.color = "green";
+            }
+        });
+    </script>
+
+</body>
+</html>
