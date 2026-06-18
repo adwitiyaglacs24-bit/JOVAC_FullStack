@@ -6,24 +6,18 @@
     <title>Validation Form</title>
 </head>
 <body>
-
     <form id="userForm">
         <input type="text" id="userInput" placeholder="Enter Username">
         <p id="message"></p>
-
         <button type="submit">Submit</button>
     </form>
-
     <script>
         const userForm = document.getElementById("userForm");
         const userInput = document.getElementById("userInput");
         const message = document.getElementById("message");
-
         userForm.addEventListener("submit", function(event) {
             event.preventDefault();
-
             let text = userInput.value.trim();
-
             if (text === "") {
                 message.innerText = "Username cannot be empty!";
                 message.style.color = "red";
