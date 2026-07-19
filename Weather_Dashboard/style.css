@@ -1,0 +1,437 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #0b0f17;
+  color: #fff;
+  min-height: 100vh;
+  padding: 25px;
+}
+
+.app-container {
+  max-width: 1450px;
+  margin: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #5d8cff;
+}
+
+#lastUpdated {
+  color: #8b92a7;
+  font-size: 14px;
+}
+
+.search-box {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 15px;
+}
+
+#searchInput {
+  flex: 1;
+  height: 55px;
+  padding: 0 20px;
+  background: #171c28;
+  border: 1px solid #232a3c;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+#searchInput::placeholder {
+  color: #7d8598;
+}
+
+#searchInput:focus {
+  border-color: #4d83ff;
+}
+
+#searchBtn {
+  width: 120px;
+  border: none;
+  border-radius: 14px;
+  background: #4d83ff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#searchBtn:hover {
+  background: #3b6de6;
+  transform: translateY(-2px);
+}
+
+#recentSearches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.chip {
+  padding: 8px 16px;
+  background: #18213a;
+  border: 1px solid #2b468d;
+  color: #8eb2ff;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chip:hover {
+  background: #23418f;
+  color: white;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-card,
+.section-card,
+.aqi-card {
+  background: #171c28;
+  border: 1px solid #232a3c;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.weather-card {
+  transition: 0.3s;
+}
+
+.weather-card:hover {
+  transform: translateY(-4px);
+}
+
+.weather-card h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.weather-card p {
+  margin-top: 8px;
+  color: #d5d8e2;
+}
+
+.weather-card img {
+  width: 90px;
+}
+
+#forecastContainer {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.forecast-card {
+  width: 110px;
+  background: #0f141f;
+  border: 1px solid #232a3c;
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-3px);
+}
+
+.forecast-card img {
+  width: 50px;
+}
+
+.forecast-card h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.forecast-card p {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.news-title {
+  margin-bottom: 18px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8d94a9;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.news-card {
+  background: #171c28;
+  border: 1px solid #232a3c;
+  border-radius: 16px;
+  padding: 18px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 170px;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card img {
+  display: none;
+}
+
+.news-content {
+  padding: 0;
+}
+
+.news-content h3 {
+  font-size: 17px;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.news-content p {
+  display: none;
+}
+
+.news-content a {
+  text-decoration: none;
+  color: #6ba4ff;
+  font-weight: 600;
+}
+
+.aqi-card h3 {
+  margin-bottom: 12px;
+}
+
+.ai-section {
+  margin-top: 30px;
+  background: #171c28;
+  border: 1px solid #232a3c;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.ai-section h3 {
+  margin-bottom: 18px;
+}
+
+.ai-input-box {
+  display: flex;
+  gap: 12px;
+}
+
+#aiInput {
+  flex: 1;
+  height: 50px;
+  padding: 0 18px;
+  background: #0f141f;
+  border: 1px solid #232a3c;
+  border-radius: 12px;
+  color: white;
+  outline: none;
+}
+
+#aiInput:focus {
+  border-color: #4d83ff;
+}
+
+#askAiBtn {
+  width: 120px;
+  border: none;
+  border-radius: 12px;
+  background: #6b5cff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#askAiBtn:hover {
+  background: #5b49f0;
+}
+
+#aiResponse {
+  margin-top: 18px;
+  background: #0f141f;
+  border-radius: 12px;
+  padding: 18px;
+  min-height: 140px;
+  line-height: 1.8;
+  color: #d4d8e3;
+}
+
+.error-text {
+  margin-top: 15px;
+  color: #ff5d5d;
+}
+
+.hidden {
+  display: none;
+}
+
+.good {
+  color: #22c55e;
+}
+
+.fair {
+  color: #84cc16;
+}
+
+.moderate {
+  color: #facc15;
+}
+
+.poor {
+  color: #fb923c;
+}
+
+.verypoor {
+  color: #ef4444;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b3448;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #11151d;
+}
+
+@media (max-width: 1000px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  #searchBtn {
+    width: 100%;
+  }
+
+  .ai-input-box {
+    flex-direction: column;
+  }
+
+  #askAiBtn {
+    width: 100%;
+  }
+}
+
+.section-title{
+font-size:12px;
+letter-spacing:2px;
+color:#8a93aa;
+margin-bottom:20px;
+text-transform:uppercase;
+}
+
+.weather-top{
+display:flex;
+align-items:center;
+margin-bottom:25px;
+}
+
+.temp-box{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.temp-box img{
+width:80px;
+}
+
+.temp-box h1{
+font-size:56px;
+margin-bottom:6px;
+}
+
+.temp-box h2{
+font-size:24px;
+margin-bottom:4px;
+}
+
+.weather-stats{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.stat{
+background:#0f141f;
+border:1px solid #232a3c;
+border-radius:14px;
+padding:16px;
+}
+
+.stat span{
+font-size:12px;
+color:#8b92a7;
+text-transform:uppercase;
+}
+
+.stat h3{
+margin-top:8px;
+font-size:22px;
+}
+
+.news-content small{
+color:#6f9cff;
+font-weight:600;
+text-transform:uppercase;
+}
+
+.news-content span{
+color:#7d8598;
+font-size:13px;
+}

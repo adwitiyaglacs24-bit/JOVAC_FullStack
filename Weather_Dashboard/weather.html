@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>InfoDash</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="navbar">
+        <div class="logo">⚡ InfoDash</div>
+        <div id="lastUpdated"></div>
+      </header>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search city..." />
+        <button id="searchBtn">Search</button>
+      </div>
+      <div id="recentSearches"></div>
+      <div id="loadingIndicator" class="hidden">Fetching Weather...</div>
+      <div id="errorMessage" class="hidden error-text"></div>
+      <div class="main-layout">
+        <div class="left-panel">
+          <div id="weatherContainer"></div>
+          <div class="section-card">
+            <h3>3-Day Forecast</h3>
+            <div id="forecastContainer"></div>
+          </div>
+          <div id="aqiContainer"></div>
+        </div>
+        <div class="right-panel">
+          <h3 class="news-title">Top Headlines</h3>
+          <div id="newsContainer" class="news-grid"></div>
+        </div>
+      </div>
+      <div class="ai-section">
+        <h3>✨ AI Assistant</h3>
+        <div class="ai-input-box">
+          <input
+            type="text"
+            id="aiInput"
+            placeholder="Ask anything about the weather..."
+          />
+          <button id="askAiBtn">Ask AI</button>
+        </div>
+
+        <div id="aiResponse"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

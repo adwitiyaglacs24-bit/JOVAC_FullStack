@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Health Report Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <div class="bg-circle circle1"></div>
+    <div class="bg-circle circle2"></div>
+    <div class="bg-circle circle3"></div>
+    <main class="container">
+        <section class="hero">
+            <div class="hero-top">
+                <div>
+                    <h1>AI Health Report Analyzer</h1>
+                    <p class="subtitle">
+                        Upload your medical report and receive AI-powered insights,
+                        lifestyle suggestions, risk analysis and an intelligent assistant.
+                    </p>
+                </div>
+                <div class="badge"><span class="dot"></span>AI Powered</div>
+            </div>
+        </section>
+        <section class="upload-card">
+            <div class="upload-icon">📄</div>
+            <h2>Upload Medical Report</h2>
+            <p>Supported Format : PDF</p>
+            <div class="upload-box"><input type="file" id="reportFile" accept=".pdf">
+                <button id="analyzeBtn">Analyze Report</button>
+            </div>
+            <div id="loading" class="hidden">AI is analyzing your report...</div>
+        </section>
+        <section id="dashboard" class="dashboard hidden">
+            <div class="left-column">
+                <div class="card analysis-card">
+                    <div class="card-title">AI Report Analysis</div>
+                    <div class="tabs">
+                        <button class="tab-btn active">Summary</button>
+                        <button class="tab-btn">Risks</button>
+                        <button class="tab-btn">Diet</button>
+                        <button class="tab-btn">Lifestyle</button>
+                        <button class="tab-btn">Disclaimer</button>
+                    </div>
+                    <div id="reportSummary"></div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="small-card health">
+                    <h3>Overall Health</h3>
+                    <div id="healthStatus">Waiting for analysis...</div>
+                </div>
+                <div class="small-card risk">
+                    <h3>⚠ Risk Level</h3>
+                    <div id="riskStatus">Waiting for analysis...</div>
+                </div>
+
+                <div class="small-card emergency">
+                    <h3>Emergency</h3>
+                    <div id="emergencyStatus">Waiting for analysis...</div>
+                </div>
+                <div class="small-card tip">
+                    <h3>💡 Daily Health Tip</h3>
+                    <div id="dailyTip"></div>
+                </div>
+            </div>
+        </section>
+        <section class="chat-card">
+            <div class="chat-header">
+                AI Medical Assistant
+            </div>
+            <p>
+                Ask questions only related to the uploaded report.
+            </p>
+            <div class="chat-box">
+                <input id="questionInput" type="text" placeholder="Ask anything about your report...">
+                <button id="askBtn">Ask AI</button>
+            </div>
+            <div id="aiResponse"></div>
+        </section>
+        <section class="disclaimer">
+            <h3>Medical Disclaimer</h3>
+            <p>
+                This AI generated report is for educational purposes only.
+                Always consult a qualified healthcare professional before
+                taking any medication or making medical decisions.
+            </p>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
